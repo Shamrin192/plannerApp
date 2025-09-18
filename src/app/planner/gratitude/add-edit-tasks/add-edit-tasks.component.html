@@ -1,0 +1,38 @@
+<div><button class="back-btn" routerLink="/gratitude">⬅️ Back</button></div>
+<div class="journal-page">
+  <!-- Header -->
+  <div class="journal-header">
+    <h1>GRATITUDE <span>• JOURNAL •</span></h1>
+  </div>
+
+  <!-- Gratitude Section -->
+ <div class="gratitude-box">
+  <h3>I’M GRATEFUL FOR...</h3>
+  <div *ngFor="let item of [1,2,3]; let i = index" class="gratitude-line">
+    <span class="number">{{i+1}}.</span>
+    <input
+      type="text"
+      [(ngModel)]="gratitudeList[i]"
+      placeholder="Write here..."
+    />
+  </div>
+</div>
+
+
+  <!-- Two Column Section -->
+  <div class="two-columns">
+    <div class="note-box">
+      <h3>THE BEST PART OF TODAY WAS...</h3>
+      <textarea [(ngModel)]="bestPart" placeholder="Write here..."></textarea>
+    </div>
+    <div class="note-box">
+      <h3>LOOKING FORWARD TO TOMORROW BECAUSE...</h3>
+      <textarea [(ngModel)]="tomorrow" placeholder="Write here..."></textarea>
+    </div>
+  </div>
+
+  <!-- Save Button -->
+  <button class="save-btn" (click)="onSave()">
+    {{ isEditing ? 'Edit ✏️' : 'Save ✍️' }}
+  </button>
+</div>

@@ -1,0 +1,21 @@
+<div class="wellness-page">
+<button class="back-btn" routerLink="/notes">⬅️ Back</button>
+  <h1 class="title">🌿 Notes</h1>
+  <p class="subtitle">Take a moment for yourself ✨</p>
+
+  <div class="journal-container">
+    <label class="note-label">📔 Title</label>
+    <input type="text" placeholder="Optional title..." class="note-title" [(ngModel)]="title"/>
+
+    <textarea placeholder="Write your thoughts here..." [(ngModel)]="content"></textarea>
+  </div>
+
+  <div class="cute-visuals">
+    <span class="star">⭐</span>
+    <span class="flower">🌸</span>
+    <span class="heart">💖</span>
+    <span class="sparkle">✨</span>
+  </div>
+
+  <button class="save-btn" (click)="saveNote()">💾 Save Entry</button>
+</div>

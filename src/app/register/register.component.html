@@ -1,0 +1,53 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+  <!-- Name -->
+  <label>
+    Name:
+    <input type="text" formControlName="name" />
+  </label>
+  <div *ngIf="registerForm.get('name')?.touched && registerForm.get('name')?.invalid">
+    Name is required
+  </div>
+
+  <!-- Email -->
+  <label>
+    Email:
+    <input type="email" formControlName="email" />
+  </label>
+  <div *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.touched || registerForm.get('email')?.dirty)">
+  Email is required
+</div>
+  <!-- Password -->
+  <label>
+    Password:
+    <input type="password" formControlName="password" />
+  </label>
+  <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+    Password is required (min 10 chars)
+  </div>
+
+  <!-- Confirm Password -->
+  <label>
+    Confirm Password:
+    <input type="password" formControlName="confirmPassword" />
+  </label>
+  <div *ngIf="registerForm.hasError('passwordMismatch') && (registerForm.get('confirmPassword')?.touched || registerForm.get('confirmPassword')?.dirty)">
+  Passwords do not match
+</div>
+
+  <!-- Nickname -->
+  <label>
+    Nickname:
+    <input type="text" formControlName="nickname" />
+  </label>
+  <div *ngIf="registerForm.get('nickname')?.touched && registerForm.get('nickname')?.invalid">
+    Nickname is required
+  </div>
+
+  <!-- Profile Pic (Optional) -->
+  <label>
+    Profile Picture:
+    <input type="file" (change)="onFileSelected($event)" formControlName="profilePic" />
+  </label>
+
+  <button type="submit" [disabled]="registerForm.invalid">Register</button>
+</form>

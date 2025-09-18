@@ -1,0 +1,27 @@
+<div class="gratitude-journal">
+  <button class="back-btn" routerLink="/planner">⬅️ Back</button>
+  <h1 class="title">🌸 Gratitude Journal</h1>
+  <p class="subtitle">Take a moment to reflect on today ✨</p>
+
+  <button class="add-btn" routerLink="/gratitude/add">➕ Add Entry</button>
+
+  <div class="saved-entries" *ngIf="entries.length > 0; else noEntries">
+
+    <div *ngFor="let entry of entries; let i = index" class="entry-card">
+       <span class="delete-icon" (click)="deleteEntry(entry._id)">🗑️</span>
+      <h3>{{ entry.entryDate | date:'fullDate' }}</h3>
+      <p><b>Grateful For:</b></p>
+      <ul>
+        <li *ngFor="let g of entry.gratitudeList">{{ g }}</li>
+      </ul>
+      <p><b>Best part:</b> {{ entry.bestPart }}</p>
+      <p><b>Looking forward:</b> {{ entry.tomorrow }}</p>
+
+      <button class="edit-btn" [routerLink]="['/gratitude/edit', entry.entryDate]">✏️ Edit</button>
+    </div>
+  </div>
+
+  <ng-template #noEntries>
+    <p class="empty-message">✨ No entries yet. Let’s be grateful today 💖</p>
+  </ng-template>
+</div>

@@ -1,0 +1,57 @@
+.planner-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  min-height: calc(100vh - 120px);
+  background: #f9fafb;
+
+  .planner-left,
+  .planner-center,
+  .planner-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .widget-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #374151;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+
+    .view-btn {
+      background: linear-gradient(135deg, #4f46e5, #9333ea);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: linear-gradient(135deg, #4338ca, #7e22ce);
+      }
+    }
+  }
+}

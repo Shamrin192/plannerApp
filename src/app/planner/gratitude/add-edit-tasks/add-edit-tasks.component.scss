@@ -1,0 +1,157 @@
+.journal-page {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+}
+
+.journal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f7a600;
+    letter-spacing: 1px;
+
+    span {
+      font-size: 1rem;
+      color: #333;
+      display: block;
+      margin-top: 0.3rem;
+    }
+  }
+
+  .date-section {
+    text-align: right;
+
+    label {
+      font-size: 0.95rem;
+      font-weight: 500;
+
+      input {
+        border: none;
+        border-bottom: 1px solid #000;
+        outline: none;
+        margin-left: 6px;
+      }
+    }
+
+    .weekdays {
+      margin-top: 0.5rem;
+      display: flex;
+      gap: 6px;
+      font-weight: bold;
+    }
+  }
+}
+
+.gratitude-box {
+  background: #ffe4ec;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+
+  h3 {
+    text-align: center;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .gratitude-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    span {
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    input {
+      flex: 1;
+      border: none;
+      border-bottom: 2px solid #000;
+      outline: none;
+      background: transparent;
+      font-size: 1rem;
+      padding: 0.3rem;
+    }
+  }
+}
+
+.two-columns {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  .note-box {
+    flex: 1;
+    background: #ffe4ec;
+    padding: 1rem;
+    border-radius: 12px;
+
+    h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+      text-align: center;
+      color: #333;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      border: none;
+      outline: none;
+      background: transparent;
+      resize: none;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+.save-btn {
+  display: block;
+  margin: 0 auto;
+  background: #f7a600;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: #cc8500;
+  }
+
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ba68c8;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background 0.3s, transform 0.2s;
+
+    &:hover {
+      background: #9c27b0;
+      transform: scale(1.05);
+    }
+  }

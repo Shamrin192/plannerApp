@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<div class="planner-container">
+  <!-- Left column -->
+  <div class="planner-left">
+    <div class="widget-card" (click)="goToGratitude()">
+      <h3>🌸 Gratitude</h3>
+      <p>Write 3 things you’re grateful for today...</p>
+      <button class="view-btn">Open</button>
+    </div>
+
+    <div class="widget-card" (click)="goToNotes()">
+      <h3>📝 Notes</h3>
+      <p>Quick thoughts and reflections...</p>
+      <button class="view-btn">Open</button>
+    </div>
+  </div>
+
+  <!-- Middle column -->
+  <div class="planner-center">
+    <div class="widget-card" (click)="goToPriorities()">
+      <h3>⭐ Priorities</h3>
+      <p>Set your top 3 priorities of the day...</p>
+      <button class="view-btn">Open</button>
+    </div>
+
+    <div class="widget-card">
+      <h3>📅 To-Do</h3>
+      <p>Track today’s to-do tasks...</p>
+      <button class="view-btn">Open</button>
+    </div>
+  </div>
+
+  <!-- Right column -->
+  <div class="planner-right">
+    <div class="widget-card">
+      <h3>📆 Calendar</h3>
+      <p>View monthly planner...</p>
+      <button class="view-btn">Open</button>
+    </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>

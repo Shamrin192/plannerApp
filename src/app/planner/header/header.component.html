@@ -1,0 +1,37 @@
+<mat-toolbar class="app-header">
+  <!-- Left: Logo + Brand -->
+  <div class="brand">
+    <mat-icon class="brand-icon">favorite</mat-icon>
+    <span class="brand-name">SS Daily Planner</span>
+  </div>
+
+  <!-- Spacer -->
+  <span class="spacer"></span>
+
+  <!-- Right: User Section -->
+  <div class="user-section">
+    <span class="user-nickname">{{ user?.nickName || 'My Love' }}</span>
+
+    <img
+      [src]="'http://localhost:3000/' + user?.profilePicture || 'assets/profilePic.jpg'"
+      alt="Profile"
+      class="profile-pic"
+    />
+
+    <button mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="Settings" class="settings-btn">
+      <mat-icon>settings</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<!-- Profile Menu -->
+<mat-menu #profileMenu="matMenu">
+  <button mat-menu-item (click)="onEditProfile()">
+    <mat-icon>edit</mat-icon>
+    <span>Edit Profile</span>
+  </button>
+  <button mat-menu-item (click)="onLogout()">
+    <mat-icon>logout</mat-icon>
+    <span>Logout</span>
+  </button>
+</mat-menu>

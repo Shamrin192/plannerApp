@@ -1,0 +1,26 @@
+<div class="notes-container">
+    <button class="back-btn" routerLink="/planner">⬅️ Back</button>
+  <h1 class="title">📒 My Notes</h1>
+  <p class="subtitle">Capture your thoughts, ideas & reflections ✨</p>
+
+  <button class="add-btn" routerLink="/notes/add-notes">➕ Add Note</button>
+
+  <div class="saved-notes" *ngIf="notes.length > 0; else noNotes">
+    <div *ngFor="let note of notes; let i = index" class="note-card">
+      <span class="delete-icon" (click)="deleteNote(note._id)">🗑️</span>
+
+      <h3>{{ note.title || (note.entryDate | date:'fullDate') }}</h3>
+      <p class="date">{{ note.entryDate | date:'mediumDate' }}</p>
+
+      <div class="note-preview">
+        <p>{{ note.content | slice:0:100 }}{{ note.content.length > 100 ? '...' : '' }}</p>
+      </div>
+
+      <button class="edit-btn" [routerLink]="['/notes/edit-notes', note._id]">✏️ Edit</button>
+    </div>
+  </div>
+
+  <ng-template #noNotes>
+    <p class="empty-message">✨ No notes yet. Start writing your thoughts 💖</p>
+  </ng-template>
+</div>
