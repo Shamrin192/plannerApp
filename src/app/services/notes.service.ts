@@ -32,4 +32,8 @@ export class NotesService {
   getNotes(userId:string){
     return this.http.get(`${this.apiUrl}/getNotes/${userId}`)
   }
+
+  getNoteById(id:string){
+    return this.http.get(`${this.apiUrl}/getNoteById/${id}`)
+  }
 }

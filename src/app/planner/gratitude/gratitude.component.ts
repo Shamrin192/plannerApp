@@ -31,16 +31,6 @@ export class GratitudeComponent implements OnInit{
     })
 
   }
-  editEntry(index: number) {
-    const entry = this.entries[index];
-
-    this.gratitudeList = [...entry.gratitudeList];
-    this.bestPart = entry.bestPart;
-    this.tomorrow = entry.tomorrow;
-
-    // Remove old entry so it will be replaced when saved again
-    this.entries.splice(index, 1);
-  }
 
   deleteEntry(entryId:string){
     if(!confirm('Babe! Are you sure you wanna delete this entry?')) return;

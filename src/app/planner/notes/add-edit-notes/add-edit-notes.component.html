@@ -17,5 +17,7 @@
     <span class="sparkle">✨</span>
   </div>
 
-  <button class="save-btn" (click)="saveNote()">💾 Save Entry</button>
+  <button class="save-btn" (click)="saveNote()">
+    {{ isEditing ? 'Edit ✏️' : 'Save ✍️' }}
+  </button>
 </div>
